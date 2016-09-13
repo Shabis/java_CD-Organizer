@@ -1,0 +1,24 @@
+<h1>CD Organizer</h1>
+
+#if ($newOrganizer)
+  <ul>
+    #foreach($CD in $newOrganizer)
+      <li>$CD.getTitle()</li>
+    #end
+  </ul>
+#else
+  <p>
+    No CDs have been added.
+  </p>
+#end
+
+<p>
+  Add a CD to the organizer:
+</p>
+
+<form action="/CDOrganizer" method="post">
+  <label for="title">Title of CD:</label>
+  <input type="text" name="title" id="title">
+
+  <button type="submit" name="btn">Add CD to Organizer</button>
+</form>
